@@ -1,7 +1,7 @@
 # <div align="center">VIRTUAL MOUSE USING HAND GESTURES</div>
 
 ## 1) DESCRIPCIÓN DEL PROYECTO
-Este proyecto contiene el desarrollo de un *mouse* virtual que permite controlar el cursor y ejecutar acciones del *mouse* utilizando gestos de las manos. Mediante el modelo *Mediapipe Hands*, se extraen las coordenadas de los puntos clave de ambas manos, y se aplican técnicas de *Computer Vision* orientados a la invarianza a escala y fórmulas de suavizado (*smoothing*) para evitar el temblor (*jitter*) en el movimiento del cursor. 
+Este proyecto contiene el desarrollo de un *mouse* virtual que permite controlar el cursor y ejecutar acciones del *mouse* utilizando gestos de las manos. Mediante el modelo *Mediapipe Hands*, se extraen las coordenadas de los puntos clave de ambas manos en tiempo real mediante cámara, y se aplican técnicas de *Computer Vision* orientados a la invarianza a escala y fórmulas de suavizado (*smoothing*) para evitar el temblor (*jitter*) en el movimiento del cursor. 
 
 ----
 
