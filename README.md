@@ -247,7 +247,7 @@ python3 -m venv virtual-mouse-env
       source virtual-mouse-env/bin/activate
     ```
 - **Windows**:
-  - Si estás en Windows, activas el *environment* de Python mediante del siguiente comando:
+  - Si estás en Windows, activas el *environment* de Python mediante el siguiente comando:
     ```bash
     .\virtual-mouse-env\Scripts\activate
     ```
