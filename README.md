@@ -218,3 +218,47 @@ file-root/
 ----
 
 ## 11) EJECUCIÓN LOCAL
+
+Para ejecutar el *mouse virtual*, sigue los pasos descritos:
+
+#### 1) Clonar repositorio
+- Clonar el repositorio (recomendado en el escritorio):
+```bash
+git clone (link_del_repo)
+```
+
+#### 2) Carpeta
+- Ingresar a la carpeta donde clonaste el repositorio:
+```bash
+cd [Ruta_donde_clonaste_el_repositorio]
+```
+
+#### 3) Environemnt
+- Crear el environment de Python:
+```bash
+python3 -m venv virtual-mouse-env
+```
+
+#### 4) Activación del environment
+- **Ubuntu**:
+  - Si estás en Ubuntu, debes activar el *environment* de Python mediante el siguiente comando:
+    ```bash
+      source virtual-mouse-env/bin/activate
+    ```
+- **Windows**:
+  - Si estás en Windows, activas el *environment* de Python mediante del siguiente comando:
+    ```bash
+    .\virtual-mouse-env\Scripts\activate
+    ```
+
+#### 5) Librerías
+- Instalar las librerías necesarias para la ejecución del *mouse* virtual:
+```bash
+pip install -r requirements.txt
+```
+
+#### 6) Ejecución
+- Finalmente, para ejecutar y utilizar el *mouse* virtual, colocar
+  ```bash
+    python ./main.py
+  ``` 
