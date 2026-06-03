@@ -206,7 +206,8 @@ file-root/
 |--- utils.py
 |--- images/
 |    |--- (imágenes utilizadas en el README)
-| 
+|
+|--- requirements.txt 
 |--- README.md
 ```
 
