@@ -187,7 +187,7 @@ El *mouse* virtual fue optimizado iterativamente resolviendo varios problemas cl
 ----
 
 ## 9) MEJORAS Y TRABAJO FUTURO
-  - Se plantea como mejora futura desacoplar el control del cursor y la ejecución del clic izquierdo, los cuales actualmente comparten el uso del dedo índice izquierdo. Aunque se implementaron mecanismos de mitigación mediante variables booleanas y el almacenamiento de las coordenadas previas al click, aún se observan desplazamientos involuntarios durante el gesto, por lo que la solución actual solo reduce el problema, pero no lo elimina completamente. Como alternativa, se evaluará la reasignación del clic a otro dedo u otras estrategias de separación de gestos que reduzcan la interferencia entre acciones y mejoren la precisión de la interacción.
+  - Se plantea como mejora futura desacoplar el control del cursor y la ejecución del click izquierdo, los cuales actualmente comparten el uso del dedo índice izquierdo. Aunque se implementaron mecanismos de mitigación mediante variables booleanas y el almacenamiento de las coordenadas previas al click, aún se observan desplazamientos involuntarios durante el gesto, por lo que la solución actual solo reduce el problema, pero no lo elimina completamente. Como alternativa, se evaluará la reasignación del click a otro dedo u otras estrategias de separación de gestos que reduzcan la interferencia entre acciones y mejoren la precisión de la interacción.
   - Se plantea la incorporación de nuevas acciones basadas en gestos en versiones futuras del sistema, con el objetivo de ampliar las capacidades de interacción y cubrir funcionalidades adicionales de control del cursor.
 
 ----
