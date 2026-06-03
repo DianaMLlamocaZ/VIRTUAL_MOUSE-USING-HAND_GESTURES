@@ -263,7 +263,7 @@ pip install -r requirements.txt
   ```bash
     python ./main.py
   ``` 
-  **NOTA**: El proyecto utiliza OpenCV para acceder a la cámara del dispositivo a través de "VideoCapture" colocado en el archivo .main, línea 60.
+  **NOTA**: El proyecto utiliza OpenCV para acceder a la cámara del dispositivo a través de "VideoCapture" colocado en el archivo *main.py*, línea 60.
 
   El parámetro colocado en la función VideoCapture() puede variar:
     - 0 normalmente corresponde a la cámara principal (integrada en laptops o webcam por defecto).
