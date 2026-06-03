@@ -209,3 +209,8 @@ file-root/
 | 
 |--- README.md
 ```
+
+- [**main.py:**](./main.py) Archivo principal a ejecutar para utilizar el mouse virtual.
+- [**save_data_plot.py:**](./save_data_plot.py) Almacenamiento de los valores de la trayectoria del cursor y la invariaza a escala de las coordenadas.
+- [**graficas.py:**](./graficas.py) Archivo que permite visualizar las gráficas de las coordenadas del cursor.
+- [**utils.py:**](./utils.py) Contiene la función que realiza la invarianza a escala de las coordenadas.
