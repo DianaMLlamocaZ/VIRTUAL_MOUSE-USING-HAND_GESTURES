@@ -236,7 +236,8 @@ Para ello, se implementaron dos soluciones:
       - Representa la incertidumbre en el modelo físico:
         - Mientras más alto sea su valor, más se 'confía' en las mediciones del sensor (menos confianza en el modelo físico).
         - Mientras más bajo sea su valor, menos se 'confía' en las mediciones del sensor (más confianza en el modelo físico).
-      - Q = I * r_p; I: matriz identidad, r_p: escalar que representa el ruido del proceso. Se configuró 'r_p' en 10^(-5) 
+      - Q = I * r_p; I: matriz identidad, r_p: escalar que representa el ruido del proceso.
+      - **NOTA:** Se configuró 'r_p' en 10^(-5) 
 
   $$
     \begin{aligned}
@@ -254,7 +255,8 @@ Para ello, se implementaron dos soluciones:
       - Representa la imprecisión del sensor:
         - Mientras más bajo sea su valor, más se confía en el modelo físico (menos confianza en el sensor).
         - Mientras más alto sea su valor, menos se confía en el modelo físico (más confianza en el sensor).
-      - R = I * r_m; I: matriz identidad, r_m: escalar que representa el ruido de medición. Se configuró 'r_m' en 10^(-2)
+      - R = I * r_m; I: matriz identidad, r_m: escalar que representa el ruido de medición.
+      - **NOTA:** Se configuró 'r_m' en 10^(-2)
         
   $$
     \begin{aligned}
