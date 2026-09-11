@@ -198,7 +198,7 @@ Para ello, se implementaron dos soluciones:
         \end{bmatrix}
         $$
 
-  - **Matriz de transición (F)**:
+  -  **Matriz de transición (F)**:
       - Calcula la predicción utilizando la fórmula de velocidad constante definida en la matriz.
       - **NOTA:** 'delta_t' fue configurado con el valor 1, ya que el *update* se realiza en cada frame.
       - **Función:** Aplica la física del movimiento.
