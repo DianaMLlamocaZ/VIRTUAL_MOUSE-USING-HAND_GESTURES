@@ -106,7 +106,8 @@ A continuación, se detalla dicho proceso en la siguiente figura:
 **Técnica seleccionada:**
 - La combinación de **invarianza a escala + suavizado (verde)** fue la configuración seleccionada, ya que proporciona la mejor estabilidad general, reduciendo tanto la sensibilidad al tamaño como el temblor (*jitter*) en la trayectoria del movimiento del cursor, manteniendo un comportamiento consistente a lo largo del tiempo.
 
-***Observación importante*:** El pico final corresponde a una interrupción del sistema (botón de salida), por lo que no representa el comportamiento normal del modelo.
+**Observación importante:**
+- El pico final corresponde a una interrupción del sistema (botón de salida), por lo que no representa el comportamiento normal del modelo.
 
 ----
 
