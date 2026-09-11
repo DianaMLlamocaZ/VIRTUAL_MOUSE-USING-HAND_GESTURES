@@ -57,7 +57,7 @@ A continuación, se especifican las herramientas que utilicé para desarrollar e
 
 ## 5) MAPEO DE COORDENADAS E INVARIANZA A ESCALA
 
-### 5.1) MAPEO DE COORDENADAS:
+### <ins>5.1) MAPEO DE COORDENADAS</ins>:
 Las coordenadas de los *keypoints* que se obtienen al utilizar el modelo *Mediapipe Hands* se encuentran normalizadas en un rango de 0-1, y en relación al ancho y alto del *frame*. En ese sentido, para obtener las coordenadas de los píxeles en la resolución del *frame* actual, se multiplican las coordenadas normalizadas por el ancho y alto del *frame*.
 
 El *frame* que procesa el sistema es de 640x640, por lo que las coordenadas "x" e "y" capturadas por el modelo *Mediapipe Hands* se multiplican por 640, respectivamente.
