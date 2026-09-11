@@ -83,13 +83,13 @@ A continuación, se detalla dicho proceso en la siguiente figura:
 
 ### 5.2) INVARIANZA A ESCALA:
 
-Problema encontrado:
+**Problema encontrado:**
 - La distancia entre los dedos incrementa o decrementa cuando ambos están más cerca/lejos de la cámara. Dado que el *left click* funciona en base a un *threshold* de distancia, la invarianza puede ocasionar falsos positivos (falsos *clicks*). 
 
-Solución:
+**Solución:**
 - Para aplicar invarianza a escala, se define un punto central de referencia (wrist). A partir de este, se calcula la distancia entre el wrist y el landmark 9. Luego, todos los demás keypoints se normalizan dividiendo sus distancias respecto a ese valor.
 
-Gráficas:
+**Gráficas:**
 - La siguiente gráfica compara el comportamiento de la distancia normalizada bajo diferentes configuraciones del sistema, evaluando el efecto de la invarianza a escala y el suavizado ([*smoothing*](#7-reducción-de-temblor-en-el-movimiento-del-cursor), se explica más adelante también):
 
 <div align="center">
@@ -100,13 +100,13 @@ Gráficas:
 - **Rojo:** Distancia con invarianza a escala sin suavizado  
 - **Verde:** Distancia con invarianza a escala y suavizado (*smoothed*)
 
-Interpretación:
+**Interpretación:**
 - Se observa que la configuración sin invarianza a escala (azul) presenta un aumento progresiva debido a la dependencia del tamaño de la mano, afectando la estabilidad del seguimiento. Por otro lado, la invarianza a escala (rojo y verde) reduce este efecto, aunque introduce ruido en ausencia de suavizado (*smoothing*).
 
-Técnica seleccionada:
+**Técnica seleccionada:**
 - La combinación de **invarianza a escala + suavizado (verde)** fue la configuración seleccionada, ya que proporciona la mejor estabilidad general, reduciendo tanto la sensibilidad al tamaño como el temblor (*jitter*) en la trayectoria del movimiento del cursor, manteniendo un comportamiento consistente a lo largo del tiempo.
 
-*Observación*: El pico final corresponde a una interrupción del sistema (botón de salida), por lo que no representa el comportamiento normal del modelo.
+***Observación importante*:** El pico final corresponde a una interrupción del sistema (botón de salida), por lo que no representa el comportamiento normal del modelo.
 
 ----
 
