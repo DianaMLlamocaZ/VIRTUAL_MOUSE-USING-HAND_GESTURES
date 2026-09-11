@@ -212,7 +212,7 @@ $$
 $$
   
  
-   --> En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
+--> En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
 
 $$
 \begin{aligned}
@@ -221,6 +221,18 @@ y_{k} &= y_{k-1} + v_y \Delta t
 \end{aligned}
 $$
 
+
+  - **Matriz de medición (H)**:
+    - Permite 'traducir' el estado interno del filtro a lo que la cámara realmente mide.
+    - En otras palabras, si bien el filtro rastrea 4 variables definidas en el vector de estado, la cámara solo entrega 2 mediciones (x,y). La cámara no da la velocidad directamente, se tiene que deducir.
+
+$$
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0
+\end{bmatrix}
+$$
+      
 
  
 ----
