@@ -147,7 +147,7 @@ Para ello, se implementaron dos soluciones:
 - *Smoothing* utilizando el filtro de Kalman: ¡Click aquí!
 
 
-### <ins>**7.1) SOLUCIÓN 1:**</ins>
+### <ins>**7.1) SOLUCIÓN 1: Exponential Moving Average Filtering**</ins>
 - Para reducir el ruido de las oscilaciones en la trayectoria del cursor se aplicó la fórmula de suavizado (*smoothing*) ["Exponential Moving Average Filtering (low-pass filter)"](#formula_smoothing), cuya notación se muestra a continuación: 
 
 > **IMPORTANTE:** Fórmula de suavizado *smoothing* - "Exponential moving average filtering"
