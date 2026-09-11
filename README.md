@@ -189,14 +189,14 @@ Para ello, se implementaron dos soluciones:
   -  **Vector de estado (x)**:
       - Representan las variables utilizadas.
 
-        $$
-        \begin{bmatrix}
-        x \\
-        y \\
-        v_x \\
-        v_y
-        \end{bmatrix}
-        $$
+    $$
+    \begin{bmatrix}
+    x \\
+    y \\
+    v_x \\
+    v_y
+    \end{bmatrix}
+    $$
 
   -  **Matriz de transición (F)**:
       - Calcula la predicción utilizando la fórmula de velocidad constante definida en la matriz.
@@ -221,7 +221,6 @@ Para ello, se implementaron dos soluciones:
     y_{k} &= y_{k-1} + v_y \Delta t
     \end{aligned}
     $$
-
 
   -  **Matriz de medición (H)**:
       - Permite 'traducir' el estado interno del filtro a lo que la cámara realmente mide.
