@@ -81,7 +81,7 @@ A continuación, se detalla dicho proceso en la siguiente figura:
 </div>
 
 
-### 5.2) INVARIANZA A ESCALA:
+### <ins>5.2) INVARIANZA A ESCALA:</ins>
 
 **Problema encontrado:**
 - La distancia entre los dedos incrementa o decrementa cuando ambos están más cerca/lejos de la cámara. Dado que el *left click* funciona en base a un *threshold* de distancia, la invarianza puede ocasionar falsos positivos (falsos *clicks*). 
