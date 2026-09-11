@@ -201,16 +201,16 @@ Para ello, se implementaron dos soluciones:
   - **Matriz de transición (F)**:
       - Calcula la predicción utilizando la fórmula de velocidad constante definida en la matriz.
       - **NOTA:** 'delta_t' fue configurado con el valor 1, ya que el *update* se realiza en cada frame.
-      - Función: Aplica la física del movimiento.
+      - **Función:** Aplica la física del movimiento.
 
-        $$
-        \begin{bmatrix}
-        1 & 0 & \Delta t & 0 \\
-        0 & 1 & 0 & \Delta t \\
-        0 & 0 & 1 & 0 \\
-        0 & 0 & 0 & 1
-        \end{bmatrix}
-        $$
+    $$
+    \begin{bmatrix}
+    1 & 0 & \Delta t & 0 \\
+    0 & 1 & 0 & \Delta t \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+    \end{bmatrix}
+    $$
   
   - **Fórmula**:
       - En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
