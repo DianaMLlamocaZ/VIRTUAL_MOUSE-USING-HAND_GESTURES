@@ -84,7 +84,8 @@ A continuación, se detalla dicho proceso en la siguiente figura:
 ### <ins>5.2) INVARIANZA A ESCALA:</ins>
 
 **Problema encontrado:**
-- La distancia entre los dedos incrementa o decrementa cuando ambos están más cerca/lejos de la cámara. Dado que el *left click* funciona en base a un *threshold* de distancia, la invarianza puede ocasionar falsos positivos (falsos *clicks*). 
+- La distancia entre los dedos índice y pulgar, utilizada para detectar cuando el usuario realiza un *left click*, incrementa o decrementa cuando ambos dedos están más cerca o lejos de la cámara, respectivamente.
+Dado que el *left click* funciona en base a un *threshold* de distancia entre ambos dedos, la no invarianza a escala puede ocasionar falsos positivos (falsos *clicks*) solo por la lejanía o cercanía a la cámara. 
 
 **Solución:**
 - Para aplicar invarianza a escala, se define un punto central de referencia (wrist). A partir de este, se calcula la distancia entre el wrist y el landmark 9. Luego, todos los demás keypoints se normalizan dividiendo sus distancias respecto a ese valor.
@@ -101,7 +102,7 @@ A continuación, se detalla dicho proceso en la siguiente figura:
 - **Verde:** Distancia con invarianza a escala y suavizado (*smoothed*)
 
 **Interpretación:**
-- Se observa que la configuración sin invarianza a escala (azul) presenta un aumento progresiva debido a la dependencia del tamaño de la mano, afectando la estabilidad del seguimiento. Por otro lado, la invarianza a escala (rojo y verde) reduce este efecto, aunque introduce ruido en ausencia de suavizado (*smoothing*).
+- Se observa que la configuración sin invarianza a escala (azul) presenta un aumento progresivo de la distancia debido a medida que la mano se acerca a la cámara, afectando la estabilidad del seguimiento. Por otro lado, la invarianza a escala (rojo y verde) reduce este efecto, aunque introduce ruido en ausencia de suavizado (*smoothing*).
 
 **Técnica seleccionada:**
 - La combinación de **invarianza a escala + suavizado (verde)** fue la configuración seleccionada, ya que proporciona la mejor estabilidad general, reduciendo tanto la sensibilidad al tamaño como el temblor (*jitter*) en la trayectoria del movimiento del cursor, manteniendo un comportamiento consistente a lo largo del tiempo.
