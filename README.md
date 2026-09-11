@@ -240,6 +240,7 @@ Para ello, se implementaron dos soluciones:
 
   $$
     \begin{aligned}
+      Q =
       \begin{bmatrix}
       1 & 0 & 0 & 0 \\
       0 & 1 & 0 & 0 \\
