@@ -96,11 +96,12 @@ La siguiente gráfica compara el comportamiento de la distancia normalizada bajo
 - **Rojo:** Distancia con invarianza a escala sin suavizado  
 - **Verde:** Distancia con invarianza a escala y suavizado (*smoothed*)
 
-Se observa que la configuración sin invarianza a escala (azul) presenta un aumento progresiva debido a la dependencia del tamaño de la mano, afectando la estabilidad del seguimiento. Por otro lado, la invarianza a escala (rojo y verde) reduce este efecto, aunque introduce ruido en ausencia de suavizado (*smoothing*).
+Interpretación:
+- Se observa que la configuración sin invarianza a escala (azul) presenta un aumento progresiva debido a la dependencia del tamaño de la mano, afectando la estabilidad del seguimiento. Por otro lado, la invarianza a escala (rojo y verde) reduce este efecto, aunque introduce ruido en ausencia de suavizado (*smoothing*).
 
-La combinación de **invarianza a escala + suavizado (verde)** fue la configuración seleccionada, ya que proporciona la mejor estabilidad general, reduciendo tanto la sensibilidad al tamaño como el temblor (*jitter*) en la trayectoria del movimiento del cursor, manteniendo un comportamiento consistente a lo largo del tiempo.
+- La combinación de **invarianza a escala + suavizado (verde)** fue la configuración seleccionada, ya que proporciona la mejor estabilidad general, reduciendo tanto la sensibilidad al tamaño como el temblor (*jitter*) en la trayectoria del movimiento del cursor, manteniendo un comportamiento consistente a lo largo del tiempo.
 
-El pico final corresponde a una interrupción del sistema (botón de salida), por lo que no representa el comportamiento normal del modelo.
+*Observación*: El pico final corresponde a una interrupción del sistema (botón de salida), por lo que no representa el comportamiento normal del modelo.
 
 ----
 
