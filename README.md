@@ -310,7 +310,7 @@ El *mouse* virtual fue optimizado iterativamente resolviendo varios problemas cl
 ----
 
 ## 9) MEJORAS Y TRABAJO FUTURO
-  - Los filtros utilizados para suavizar la trayectoria del cursor introducen un desfase temporal respecto a la posición real del cursor. Para ello, se implementará un filtro adaptativo a la velocidad.
+  - Los filtros utilizados para suavizar la trayectoria del cursor introducen un desfase temporal respecto a la posición real del cursor. Para ello, se implementará un filtro que se adapta a la velocidad de la trayectoria real.
     
   - Se plantea la incorporación de nuevas acciones basadas en gestos en versiones futuras del sistema, con el objetivo de ampliar las capacidades de interacción y cubrir funcionalidades adicionales de control del cursor.
 
