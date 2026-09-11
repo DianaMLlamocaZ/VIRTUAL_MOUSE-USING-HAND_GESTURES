@@ -199,7 +199,7 @@ $$
 
   representan las variables utilizadas
 
- **Matriz de transición (F)**:
+  - **Matriz de transición (F)**:
 
 $$
 \begin{bmatrix}
@@ -208,7 +208,8 @@ $$
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}
-$$, donde \Delta t fue configura como 1, para simular un desplazamiento con velocidad constante.
+$$
+  donde \Delta t fue configura como 1, para simular un desplazamiento con velocidad constante.
  
 ----
 
