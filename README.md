@@ -216,7 +216,7 @@ $$
 
     $$
     \begin{aligned}
-    x_{k}=x_{k-1} + v_x \Delta t
+    x_{k}=x_{k-1} + v_x \Delta t \\
     y_{k}=y_{k-1} + v_y \Delta t
     \end{aligned}
     $$
