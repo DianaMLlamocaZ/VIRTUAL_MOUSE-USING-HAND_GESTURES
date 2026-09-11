@@ -187,6 +187,7 @@ Para ello, se implementaron dos soluciones:
   Para ello, se definieron los siguientes vectores y matrices:
 
   -  **Vector de estado (x)**:
+      - Representan las variables utilizadas.
 
 $$
 \begin{bmatrix}
@@ -197,9 +198,10 @@ v_y
 \end{bmatrix}
 $$
 
-  , representan las variables utilizadas
 
   - **Matriz de transición (F)**:
+      - Calcula la predicción utilizando la fórmula de velocidad constante definido en la matriz.
+      - **NOTA:** 'delta_t' fue configurado con el valor 1.
 
 $$
 \begin{bmatrix}
@@ -210,9 +212,8 @@ $$
 \end{bmatrix}
 $$
   
-  , donde 'delta_t' fue configurado con el valor 1.
-
-  --> En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
+ 
+   --> En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
 
 $$
 \begin{aligned}
