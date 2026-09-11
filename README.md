@@ -209,6 +209,7 @@ $$
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
+  
   donde \Delta t fue configura como 1, para simular un desplazamiento con velocidad constante.
  
 ----
