@@ -92,7 +92,7 @@ A continuación, se detalla dicho proceso en la siguiente figura:
 - Para aplicar la invarianza a escala, se define un punto central de referencia (wrist). A partir de este, se calcula la distancia entre el wrist y el landmark 9. Luego, todos los demás keypoints se normalizan dividiendo sus distancias respecto a ese valor.
 
 **Gráficas:**
-- La siguiente gráfica compara el comportamiento de la distancia entre los dedos índice y pulgar, a medida que se acercan a la cámara, bajo diferentes configuraciones del sistema, evaluando el efecto de la invarianza a escala y el suavizado ([*smoothing*](#7-reducción-de-temblor-en-el-movimiento-del-cursor), se explica más adelante también):
+- La siguiente gráfica compara el comportamiento de la distancia entre los dedos índice y pulgar a medida que se acercan a la cámara, bajo diferentes configuraciones del sistema, evaluando el efecto de la invarianza a escala y el suavizado ([*smoothing*](#7-reducción-de-temblor-en-el-movimiento-del-cursor), se explica más adelante también):
 
 <div align="center">
   <img src="./images/InvarianzaEscala.JPG" width=450>
