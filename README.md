@@ -189,39 +189,39 @@ Para ello, se implementaron dos soluciones:
   -  **Vector de estado (x)**:
       - Representan las variables utilizadas.
 
-      $$
-      \begin{bmatrix}
-      x \\
-      y \\
-      v_x \\
-      v_y
-      \end{bmatrix}
-      $$
+        $$
+        \begin{bmatrix}
+        x \\
+        y \\
+        v_x \\
+        v_y
+        \end{bmatrix}
+        $$
 
   - **Matriz de transición (F)**:
     - Calcula la predicción utilizando la fórmula de velocidad constante definida en la matriz.
     - **NOTA:** 'delta_t' fue configurado con el valor 1, ya que el *update* se realiza en cada frame.
     - Función: Aplica la física del movimiento.
 
-      $$
-      \begin{bmatrix}
-      1 & 0 & \Delta t & 0 \\
-      0 & 1 & 0 & \Delta t \\
-      0 & 0 & 1 & 0 \\
-      0 & 0 & 0 & 1
-      \end{bmatrix}
-      $$
+        $$
+        \begin{bmatrix}
+        1 & 0 & \Delta t & 0 \\
+        0 & 1 & 0 & \Delta t \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+        \end{bmatrix}
+        $$
   
  
  - **Fórmula**:
      - En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
  
-      $$
-      \begin{aligned}
-      x_{k} &= x_{k-1} + v_x \Delta t \\
-      y_{k} &= y_{k-1} + v_y \Delta t
-      \end{aligned}
-      $$
+        $$
+        \begin{aligned}
+        x_{k} &= x_{k-1} + v_x \Delta t \\
+        y_{k} &= y_{k-1} + v_y \Delta t
+        \end{aligned}
+        $$
 
 
   - **Matriz de medición (H)**:
