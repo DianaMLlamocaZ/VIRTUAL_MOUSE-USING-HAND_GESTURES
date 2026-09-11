@@ -172,6 +172,8 @@ Para ello, se implementaron dos soluciones:
   <sub>Figura: (izquierda) Coordenadas 'x' - Index Finger (derecha) Coordenadas 'y' - Index Finger </sub>
 </p>
 
+
+#### **- INTERPRETACIÓN:**
 - Como se observa en las figuras, se aprecia un 'suavizado' en los máximos y mínimos de las funciones que describen las trayectorias de movimiento de las coordenadas "x" e "y" del dedo índice de la mano izquierda, lo que refleja una reducción de las oscilaciones y temblores del cursor (se corroboró durante las pruebas de funcionamiento (*testing*) del mouse virtual).
 
 - **NOTA:** El vaivén de la gráfica se debe al movimiento del cursor sobre la pantalla. La reducción de las oscilaciones y temblores se describen por el suavizado en los máximos y mínimos de la función de trayectoria del movimiento del cursor en la gráfica.
