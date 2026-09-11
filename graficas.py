@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import json
 
 #Graficar smoothed vs no smoothed coordinates
-def graficar_smoothed(path_smoothed,path_real):
+def graficar_smoothed(path_smoothed,path_real,path_kalman_smoothed):
     with open(f"{path_smoothed}_x.json","r") as f1, open(f"{path_smoothed}_y.json","r") as f2:
         data_smoothed_x=json.load(f1)
         data_smoothed_y=json.load(f2)
@@ -11,13 +11,18 @@ def graficar_smoothed(path_smoothed,path_real):
         data_real_x=json.load(f1)
         data_real_y=json.load(f2)
 
+    with open(f"{path_kalman_smoothed}_x.json","r") as f1, open(f"{path_kalman_smoothed}_y.json","r") as f2:
+        data_kalman_smoothed_x=json.load(f1)
+        data_kalman_smoothed_y=json.load(f2)
+        
+
 
     #Ventana 1
     plt.figure(1)   
     plt.title("Eje X -- Coordenadas Smoothed vs Real")
     plt.plot(data_real_x,color="b",label="Real Data")
     plt.plot(data_smoothed_x,color="r",label="Smoothed Data")
-    
+    plt.plot(data_kalman_smoothed_x,color="r",label="Kalman Smoothed Data")
 
     plt.legend()
 
@@ -27,6 +32,7 @@ def graficar_smoothed(path_smoothed,path_real):
     plt.title("Eje Y -- Coordenadas Smoothed vs Real")
     plt.plot(data_real_y,color="b",label="Real Data")
     plt.plot(data_smoothed_y,color="r",label="Smoothed Data")
+    plt.plot(data_kalman_smoothed_y,color="r",label="Kalman Smoothed Data")
     
 
     plt.legend()
@@ -67,5 +73,5 @@ def graficar_invariance(path_inv,path_inv_no_sm,path_no_inv):
         plt.show()
 
 #Unccoment para realizar las gráficas luego de haber utilizado el mouse virtual
-#graficar_smoothed("./results_graphics/grafica_smoothed","./results_graphics/real")
+#graficar_smoothed("./results_graphics/grafica_smoothed","./results_graphics/real","./results_graphics/kalman_smoothed")
 #graficar_invariance(path_inv="./results_graphics/distancia_invarianza.json",path_inv_no_sm="./results_graphics/distancia_invarianza_no_smoothed.json",path_no_inv="./results_graphics/distancia_no_invarianza_smoothed.json")
