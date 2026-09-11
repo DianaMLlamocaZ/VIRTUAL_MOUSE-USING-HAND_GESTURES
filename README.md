@@ -212,7 +212,7 @@ Para ello, se implementaron dos soluciones:
     $$
   
   -  **Fórmula**:
-      - En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
+      - En conjunto, el vector de estado 'x' y la matriz 'F' representan un modelo de velocidad constante que aplican la fórmula física:
  
     $$
     \begin{aligned}
