@@ -191,8 +191,8 @@ Para ello, se implementaron dos soluciones:
 
 $$
 \begin{bmatrix}
-1 & 0 & delta_t & 0 \\
-0 & 1 & 0 & delta_t \\
+1 & 0 & \Delta t & 0 \\
+0 & 1 & 0 & \Delta t \\
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}
