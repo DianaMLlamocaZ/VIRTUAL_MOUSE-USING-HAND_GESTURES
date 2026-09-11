@@ -210,7 +210,12 @@ $$
 \end{bmatrix}
 $$
   
-  donde \Delta t fue configura como 1, para simular un desplazamiento con velocidad constante.
+  donde 'delta_t' fue configurado con el valor 1.
+
+  - En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
+    x=x-1+v_x*delta_t, x-1 es la coordenada inmediatamente anterior
+    y=y-1+v_y*delta_t, y-1 es la coordenada inmediatamente anterior
+
  
 ----
 
