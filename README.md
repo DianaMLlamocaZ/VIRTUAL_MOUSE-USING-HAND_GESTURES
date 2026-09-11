@@ -269,11 +269,28 @@ Para ello, se implementaron dos soluciones:
   $$      
 
 
-#### <ins>7.2) ANÁLISIS DE 'Q' Y 'R':</ins>
+#### <ins>7.2) CONDICIONES INICIALES DEL FILTRO DE KALMAN:</ins>
+- Para evitar un desplazamiento del cursor al origen de coordenadas (0,0) en el primer frame, se estableció al vector *statePost* con la primera coordenada detectada por la cámara:
+   $$
+    \begin{aligned}
+      x_{0} =
+      \begin{bmatrix}
+      x_{inicial} \\
+      y_{inicial} \\
+      0 \\
+      0
+      \end{bmatrix}
+    \end{aligned}
+  $$
+
+- De esta manera, se evita el problema de inicialización en la coordenada origen de la trayectoria del cursor.
+
+
+#### <ins>7.3) ANÁLISIS DE 'Q' Y 'R':</ins>
 - Al elegir Q < R (10^(-5) frente a 10^(-2)), el filtro asume que el sensor tiene ruido y que la aceleración de la mano varía poco. En ese sentido, el filtro otorga prioridad máxima a la estimación física cinemática, en vez de a los valores capturados por la cámara.
 
 
-#### <ins> 7.3) EFECTO SOBRE EL JITTER:</ins>
+#### <ins> 7.4) EFECTO SOBRE EL JITTER:</ins>
 - Debido a la configuración anterior, se logra disminuir las oscilaciones producidas por el jitter en la trayectoria del cursor.
 
 
