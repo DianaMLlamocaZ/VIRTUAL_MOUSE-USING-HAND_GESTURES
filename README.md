@@ -213,6 +213,7 @@ $$
   donde 'delta_t' fue configurado con el valor 1.
 
   - En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
+
     $$
     x_{k}=x_{k-1}+v_x delta_t
     y_{k}=y_{k-1}+v_y delta_t
