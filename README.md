@@ -235,8 +235,9 @@ Para ello, se implementaron dos soluciones:
   - **Matriz de ruido de proceso (Q)**:
     - Representa la incertidumbre en el modelo físico:
         - Mientras más alto sea su valor, más se 'confía' en las mediciones del sensor.
-        - De lo contrario, mientras más bajo sea su valor, menos se 'confía' en las mediciones del sensor.
+        - Mientras más bajo sea su valor, menos se 'confía' en las mediciones del sensor.
         - Q = I * r_p; I: matriz identidad, r_p: escalar que representa el ruido del proceso 
+    
     $$
     \begin{bmatrix}
     1 & 0 & 0 & 0 \\
