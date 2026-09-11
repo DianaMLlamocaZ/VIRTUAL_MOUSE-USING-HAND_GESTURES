@@ -137,7 +137,7 @@ Los gestos que permite el *mouse* virtual, actualmente, se describen a continuac
 >  <img src="./images/Formula.JPG">
 > </div>
 
-> --> El valor 'alpha' que se estableció en la fórmula es 0.30, luego de realizar pruebas.
+> --> El valor 'alpha' que se estableció en la fórmula fue 0.30, luego de realizar pruebas.
 
 > --> El valor 0.30 indica que se prioriza el valor *smoothed* previo (con 0.70), reduciendo de forma más significativa el temblor en la trayectoria del movimiento del cursor.
 
@@ -154,9 +154,9 @@ A continuación, se muestran las gráficas del "antes" (líneas azules) y "despu
   <sub>Figura: (izquierda) Coordenadas 'x' - Index Finger (derecha) Coordenadas 'y' - Index Finger </sub>
 </p>
 
-Como se observa en las figuras, se aprecia un suavizado en las funciones que describen las trayectorias de movimiento de las coordenadas "x" e "y" del dedo índice de la mano izquierda, lo que refleja una reducción de las oscilaciones y temblores del cursor (se corroboró durante las pruebas de funcionamiento (*testing*) del mouse virtual).
+Como se observa en las figuras, se aprecia un 'suavizado' en los máximos y mínimos de las funciones que describen las trayectorias de movimiento de las coordenadas "x" e "y" del dedo índice de la mano izquierda, lo que refleja una reducción de las oscilaciones y temblores del cursor (se corroboró durante las pruebas de funcionamiento (*testing*) del mouse virtual).
 
-**NOTA:** El vaivén de la gráfica se debe al movimiento del cursor sobre la pantalla. La reducción de las oscilaciones y temblores se describen por el suavizado de la gráfica de la función de trayectoria del movimiento del cursor.
+**NOTA:** El vaivén de la gráfica se debe al movimiento del cursor sobre la pantalla. La reducción de las oscilaciones y temblores se describen por el suavizado en los máximos y mínimos de la función de trayectoria del movimiento del cursor en la gráfica.
 
 ----
 
