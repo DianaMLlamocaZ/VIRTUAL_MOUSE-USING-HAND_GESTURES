@@ -95,7 +95,7 @@ A continuación, se detalla dicho proceso en la siguiente figura:
 - La siguiente gráfica compara el comportamiento de la distancia normalizada bajo diferentes configuraciones del sistema, evaluando el efecto de la invarianza a escala y el suavizado ([*smoothing*](#7-reducción-de-temblor-en-el-movimiento-del-cursor), se explica más adelante también):
 
 <div align="center">
-  <figure>
+  <figure align="center">
   <img src="./images/InvarianzaEscala.JPG" width=450>
   <figcaption><i>Distancia entre los dedos índice y pulgar a medida que ambos se acercan a la cámara</i></figcaption>
   </figure>
