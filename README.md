@@ -197,7 +197,7 @@ v_y
 \end{bmatrix}
 $$
 
-    representan las variables utilizadas
+  representan las variables utilizadas
 
   - **Matriz de transición (F)**:
 
@@ -210,7 +210,7 @@ $$
 \end{bmatrix}
 $$
   
-    donde 'delta_t' fue configurado con el valor 1.
+  \quad \text{donde } \Delta t = 1 $ donde 'delta_t' fue configurado con el valor 1.
 
   --> En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
 
