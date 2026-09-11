@@ -8,9 +8,19 @@ from utils import scale_invariance
 from save_data_plot import save_json
 import json
 
+from kalman_filter import KalmanFilter
+
+#Kalman Filter
+kalman=KalmanFilter()
+
+#Variable de estado
+kalman_initialized=False
+
+
 #Instancio objetos
 draw_kps=mp.solutions.drawing_utils
 hands_arc=mp.solutions.hands
+
 
 #Hands class
 hands_class=hands_arc.Hands(max_num_hands=1)
@@ -44,6 +54,8 @@ alpha=0.3 #0.22
 #Smoothing Graphic - Index Finger
 smoothing_x,smoothing_y=[],[]
 real_x,real_y=[],[]
+kalman_smoothing_x,kalman_smoothing_y=[],[]
+
 
 
 #Gráfica de distancia - Invarianza a escala NO Smoothed vs Invarianza a escala Smoothed VS no invarianza Smoothed
@@ -57,7 +69,7 @@ x_prev_safe=None
 
 
 #Cámara
-camara=cv2.VideoCapture(0)
+camara=cv2.VideoCapture(1)
 
 click_det=False
 
@@ -110,6 +122,7 @@ with hands_class as hands_model:
                     x_final_scaled_8,y_final_scaled_8=x_factor*x_indice_scaled_frame,y_factor*y_indice_scaled_frame
                     
 
+                    #========#
 
 
                     #SMOOTHING THUMB de coordenadas NO INVARIANTES (solo para gráficas, porque en realidad se usan las coordenadas invariantes + smoothed)
@@ -121,12 +134,32 @@ with hands_class as hands_model:
                     current_x_smoothed_index=(1-alpha)*movement_coord_prev["index"][0]+alpha*x_final_scaled_8
                     current_y_smoothed_index=(1-alpha)*movement_coord_prev["index"][1]+alpha*y_final_scaled_8
 
+
+                    #SMOOTHING CON EL FILTRO DE KALMAN --> Coordenadas del dedo índice (no thumb):
+                    #- Se inicializa el statePost para evitar la coordenada (0,0) del cursor al inicio
+                    if not kalman_initialized:
+                        kalman.initialize(x_final_scaled_8,y_final_scaled_8)    #Se inicializa el statePre en la coordenada actual
+                        kalman_initialized=True
+                        x_kalman_smoothed_8,y_kalman_smoothed_8=x_final_scaled_8,y_final_scaled_8 #Solo se inicializa en esta coordenada
+
+                    #- Si ya fue inicializado, solo smoothing de las coordenadas
+                    else:
+                        kalman.predict()    #Pred para PRUEBA
+                        corrected_coord=kalman.correct(x=x_final_scaled_8,y=y_final_scaled_8)            
+                        x_kalman_smoothed_8,y_kalman_smoothed_8=corrected_coord[0][0].item(),corrected_coord[1][0].item()
+
+
+
+                    #=========#
                     
+
 
                     #Muevo el cursor en base a las coordenadas del dedo índice SOLO si NO se hace click (para evitar movement)
                     if not click_det:
-                        pag.moveTo(x=current_x_smoothed_index,y=current_y_smoothed_index,_pause=False)
-
+                        #pag.moveTo(x=current_x_smoothed_index,y=current_y_smoothed_index,_pause=False) #Smoothed con la fórmula
+                        pag.moveTo(x=x_kalman_smoothed_8,y=y_kalman_smoothed_8,_pause=False)   #Smoothed con Kalman Filter
+                        #pag.moveTo(x=x_final_scaled_8,y=y_final_scaled_8,_pause=False)  #Coordenadas REALES (sin SMOOTHING)
+                        
 
                     
                     #Actualizo el diccionario de movimiento: index y thumb fingers
@@ -138,15 +171,19 @@ with hands_class as hands_model:
 
 
 
-                    #Se almacenan las coordenadas del dedo índice de las coordenadas smoothed pero no invariantes a escala
-                    #y las coordenadas reales para comparar sus gráficas y visualizar el resultados del suavizado
+                    #Se almacenan las coordenadas del dedo índice de las coordenadas smoothed con ambos métodos, pero no
+                    #invariantes a escala. Asimismo, se almacenan las coordenadas reales para comparar sus gráficas y visualizar el resultados del suavizado
                     smoothing_x.append(current_x_smoothed_index),smoothing_y.append(current_y_smoothed_index)
                     real_x.append(x_final_scaled_8),real_y.append(y_final_scaled_8)
+                    kalman_smoothing_x.append(x_kalman_smoothed_8),kalman_smoothing_y.append(y_kalman_smoothed_8)   #Kalman smoothing
+
+
+                    #=============#
 
 
 
                     #CLICK:                    
-                    #===Distancia de los KPS Smootheds, pero NO invariantes a escala (gráfica):
+                    #===Distancia de los KPS Smoothed, pero NO invariantes a escala (gráfica):
                     dx=abs(movement_coord_prev["index"][0]-movement_coord_prev["thumb"][0])
                     dy=abs(movement_coord_prev["index"][1]-movement_coord_prev["thumb"][1])
                     distancia=math.hypot(dx,dy)             #Distancia calculada a partir de las smoothed coordinates
@@ -175,7 +212,7 @@ with hands_class as hands_model:
                     dx_proof=abs(kps_inv_escala_8_x-kps_inv_escala_4_x)
                     dy_proof=abs(kps_inv_escala_8_y-kps_inv_escala_4_y)
                     
-                    distancia_proof_escalada=math.hypot(dx_proof,dy_proof)
+                    distancia_proof_escalada=math.hypot(dx_proof,dy_proof)  #Distancia de las coordenadas inv. a escala Y smoothed
                     dist_invarianza.append(distancia_proof_escalada)        #Se almacena también para graficarlo
                     
                     
@@ -184,6 +221,10 @@ with hands_class as hands_model:
                     movement_coord_inv_prev["index"]=[kps_inv_escala_8_x,kps_inv_escala_8_y]
                     movement_coord_inv_prev["thumb"]=[kps_inv_escala_4_x,kps_inv_escala_4_y]
                     
+
+
+                    #==========#
+
 
 
                     #Evito clickear constantemente. Para ello, uso un flag
@@ -229,10 +270,12 @@ with hands_class as hands_model:
 
 #Guardar los valores para el plotteo
 #Gráfica Coordenadas Smoothed
-names_smoothed=["grafica_smoothed_x","grafica_smoothed_y","real_x","real_y"]
-list_data_smoothed=[smoothing_x,smoothing_y,real_x,real_y]
+names_smoothed=["grafica_smoothed_x","grafica_smoothed_y","real_x","real_y","kalman_smoothed_x","kalman_smoothed_y"]
+list_data_smoothed=[smoothing_x,smoothing_y,real_x,real_y,kalman_smoothing_x,kalman_smoothing_y]
 
 for name_1,data_1 in zip(names_smoothed,list_data_smoothed):
+    print(f"name_1: {name_1}")
+    print(f"data_1: {data_1}")
     save_json(name_1,data_1)
 
 
