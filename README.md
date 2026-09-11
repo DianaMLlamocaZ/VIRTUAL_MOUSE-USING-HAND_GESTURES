@@ -189,18 +189,19 @@ Para ello, se implementaron dos soluciones:
   -  **Vector de estado (x)**:
       - Representan las variables utilizadas.
 
-$$
-\begin{bmatrix}
-x \\
-y \\
-v_x \\
-v_y
-\end{bmatrix}
-$$
+      $$
+      \begin{bmatrix}
+      x \\
+      y \\
+      v_x \\
+      v_y
+      \end{bmatrix}
+      $$
 
   - **Matriz de transición (F)**:
     - Calcula la predicción utilizando la fórmula de velocidad constante definida en la matriz.
-      - **NOTA:** 'delta_t' fue configurado con el valor 1.
+      - **NOTA:** 'delta_t' fue configurado con el valor 1, ya que el *update* se realiza en cada frame.
+      - Función: Aplica la física del movimiento.
 
 $$
 \begin{bmatrix}
@@ -212,7 +213,7 @@ $$
 $$
   
  
---> En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
+ --> En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
 
 $$
 \begin{aligned}
@@ -225,6 +226,7 @@ $$
   - **Matriz de medición (H)**:
     - Permite 'traducir' el estado interno del filtro a lo que la cámara realmente mide.
     - En otras palabras, si bien el filtro rastrea 4 variables definidas en el vector de estado, la cámara solo entrega 2 mediciones (x,y). La cámara no da la velocidad directamente, se tiene que deducir.
+    - Función: Conecta las variables del sensor con el filtro.
 
 $$
 \begin{bmatrix}
