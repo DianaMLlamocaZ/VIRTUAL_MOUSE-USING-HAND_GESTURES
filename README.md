@@ -226,11 +226,11 @@ Para ello, se implementaron dos soluciones:
       - En otras palabras, si bien el filtro rastrea 4 variables definidas en el vector de estado, la cámara solo entrega 2 mediciones (x,y). La cámara no da la velocidad directamente, se tiene que deducir.
       - Función: Conecta las variables del sensor con el filtro.
 
-      $$
-      \begin{bmatrix}
-      1 & 0 & 0 & 0 \\
-      0 & 1 & 0 & 0
-      \end{bmatrix}
+    $$
+    \begin{bmatrix}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0
+    \end{bmatrix}
       $$
       
 
