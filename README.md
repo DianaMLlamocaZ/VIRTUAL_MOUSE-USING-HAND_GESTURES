@@ -287,11 +287,11 @@ $$
 - De esta manera, se evita el problema de inicialización en la coordenada origen de la trayectoria del cursor.
 
 
-#### <ins>7.3) ANÁLISIS DE 'Q' Y 'R':</ins>
+#### <ins>7.2) ANÁLISIS DE 'Q' Y 'R':</ins>
 - Al elegir Q < R (10^(-5) frente a 10^(-2)), el filtro asume que el sensor tiene ruido y que la aceleración de la mano varía poco. En ese sentido, el filtro otorga prioridad máxima a la estimación física cinemática, en vez de a los valores capturados por la cámara.
 
 
-#### <ins> 7.4) EFECTO SOBRE EL JITTER:</ins>
+#### <ins> 7.2) EFECTO SOBRE EL JITTER:</ins>
 - Debido a la configuración anterior, se logra disminuir las oscilaciones producidas por el jitter en la trayectoria del cursor.
 
 
