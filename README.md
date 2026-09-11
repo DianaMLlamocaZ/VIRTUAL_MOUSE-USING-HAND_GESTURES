@@ -139,7 +139,7 @@ Los gestos que permite el *mouse* virtual, actualmente, se describen a continuac
 
 > --> El valor 'alpha' que se estableció en la fórmula es 0.30, luego de realizar pruebas.
 
-> --> El valor 0.30 indica que se prioriza el valor *smoothed* previo, reduciendo de forma más significativa el temblor en la trayectoria del movimiento del cursor.
+> --> El valor 0.30 indica que se prioriza el valor *smoothed* previo (con 0.70), reduciendo de forma más significativa el temblor en la trayectoria del movimiento del cursor.
 
 ----
 
