@@ -237,14 +237,16 @@ Para ello, se implementaron dos soluciones:
         - Mientras más alto sea su valor, más se 'confía' en las mediciones del sensor (menos confianza en el modelo físico).
         - Mientras más bajo sea su valor, menos se 'confía' en las mediciones del sensor (más confianza en el modelo físico).
       - Q = I * r_p; I: matriz identidad, r_p: escalar que representa el ruido del proceso 
-    
-    $$
-    \begin{bmatrix}
-    1 & 0 & 0 & 0 \\
-    0 & 1 & 0 & 0 \\
-    0 & 0 & 1 & 0 \\
-    0 & 0 & 0 & 1
-    \end{bmatrix}
+
+  $$
+    \begin{aligned}
+      \begin{bmatrix}
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1
+      \end{bmatrix} 10''(-5)
+    \end{aligned}
     $$
         
  
