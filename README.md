@@ -129,7 +129,7 @@ Los gestos que permite el *mouse* virtual, actualmente, se describen a continuac
 **PROBLEMA ENCONTRADO:** Al controlar el movimiento del cursor mediante las coordenadas de la punta del dedo índice de la mano izquierda, se observó la presencia ruido que generó pequeñas oscilaciones y temblores en la trayectoria del cursor, afectando la calidad de la usabilidad.
 
 
-**--> SOLUCIÓN 1:** Para reducir el ruido de las oscilaciones en la trayectoria del cursor se aplicó la fórmula de suavizado (*smoothing*) ["Exponential Moving Average Filtering (low-pass filter)"](#formula_smoothing), cuya notación se muestra a continuación: 
+**- SOLUCIÓN 1:** Para reducir el ruido de las oscilaciones en la trayectoria del cursor se aplicó la fórmula de suavizado (*smoothing*) ["Exponential Moving Average Filtering (low-pass filter)"](#formula_smoothing), cuya notación se muestra a continuación: 
 
 > **IMPORTANTE:** Fórmula de suavizado *smoothing* - "Exponential moving average filtering"
 
@@ -141,9 +141,9 @@ Los gestos que permite el *mouse* virtual, actualmente, se describen a continuac
 
 > --> El valor 0.30 indica que se prioriza el valor *smoothed* previo (con 0.70), reduciendo de forma más significativa el temblor en la trayectoria del movimiento del cursor.
 
-----
 
-**Gráficas:**
+
+**- GRÁFICAS:**
 A continuación, se muestran las gráficas del "antes" (líneas azules) y "después" (líneas rojas) de aplicar el suavizado a las trayectorias del movimiento del dedo índice de la mano izquierda:
 
 <p align="center">
