@@ -248,8 +248,23 @@ Para ello, se implementaron dos soluciones:
       0 & 0 & 0 & 1
       \end{bmatrix} * 10^{-5}
     \end{aligned}
-    $$
+  $$
+
+  -  **Matriz de ruido de medición (R)**:
+      - Representa la imprecisión del sensor:
+        - Mientras más bajo sea su valor, más se confía en el modelo físico (menos confianza en el sensor).
+        - Mientras más alto sea su valor, menos se confía en el modelo físico (más confianza en el sensor).
+      - R = I * r_m; I: matriz identidad, r_m: escalar que representa el ruido de medición. Se configuró 'r_m' en 10^(-2)
         
+  $$
+    \begin{aligned}
+      R =
+      \begin{bmatrix}
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 
+      \end{bmatrix} * 10^{-2}
+    \end{aligned}
+  $$      
  
 ----
 
