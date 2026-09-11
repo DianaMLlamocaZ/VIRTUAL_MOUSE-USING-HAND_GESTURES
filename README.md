@@ -186,29 +186,29 @@ Para ello, se implementaron dos soluciones:
 
 ----
 
-## 8) MEJORAS E INCIDENCIAS RESUELTAS
+## 8) INCIDENCIAS RESUELTAS
 
 El *mouse* virtual fue optimizado iterativamente resolviendo varios problemas clave. A continuación, se detallan los problemas detectados y las soluciones implementadas que los resolvieron.
 
-### 8.1) Invarianza a escala
+### <ins>8.1) Invarianza a escala</ins>
   - La distancia entre los dedos incrementa o decrementa cuando ambos están más cerca/lejos de la cámara. Dado que el *left click* funciona en base a un *threshold* de distancia, la invarianza puede ocasionar falsos positivos (falsos *clicks*). 
   Para aplicar invarianza a escala, se define un punto central de referencia (wrist). A partir de este, se calcula la distancia entre el wrist y el landmark 9. Luego, todos los demás keypoints se normalizan dividiendo sus distancias respecto a ese valor. Dichas coordenadas con invarianza a escala (y *smoothed*) son las que se utilizan para la detección de gestos.
 
 
-### 8.2) Puntero del cursor con latencia
+### <ins>8.2) Puntero del cursor con latencia</ins>
   - El puntero del sistema presentaba latencia, pero se solucionó mediante el parámetro "_pause=True" en la función "moveTo" en *PyAutoGUI*
 
 
-### 8.3) Ruido en la trayectoria del cursor
+### <ins>8.3) Ruido en la trayectoria del cursor</ins>
   - La trayectoria del cursor presentaba oscilaciones y temblores, que fueron solucionados al aplicar la fórmula *Exponential Moving Average Filtering* para el suavizado de la trayectoria. Dichas coordenadas con invarianza a escala y *smoothed* son las que se utilizan para la detección de gestos.
 
 
-### 8.4) Evento *click* continuo
+### <ins>8.4) Evento *click* continuo</ins>
   - Si la distancia entre los dedos índice y pulgar de la mano izquierda se mantenían cerca durante frames consecutivos, provocaban *left clicks* continuos, generando dificultades en la interacción. Como solución, se añadió un *"flag"* que se evalúa en cada frame:
      Si la distancia 'pequeña' se mantiene entre los dedos durante frames consecutivos, quiere decir que el usuario continúa "clickeando" sobre el mismo ícono. Así, el sistema solo lanza 1 click durante ese tiempo para evitar *left clicks* continuos.
 
 
-### 8.5) Movimiento del cursor durante el *left click*
+### <ins>8.5) Movimiento del cursor durante el *left click*</ins>
   - Al usarse el dedo índice de la mano izquierda para dirigir el movimiento del cursor, y usar los dedos pulgar e índice (también de la mano izquierda) para simular el *left click* mediante un threshold por "distancia", al realizar el *left click* (acercar ambos dedos) la dirección del puntero también cambiaba, puesto que el dedo índice tendía a moverse al haber ese acercamiento.
   Para **mitigar** el problema identificado, implementé las siguientes estrategias:
       - **x_prev, y_prev**: Estas variables almacenan el último valor de 'x' e 'y' ANTES de ingresar a la condicional de "distancia", ocasionando que el click se dé en la coordenada final x_prev,y_prev, evitando el movimiento involuntario del dedo.
