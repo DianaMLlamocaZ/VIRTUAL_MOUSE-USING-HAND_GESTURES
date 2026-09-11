@@ -223,8 +223,7 @@ Para ello, se implementaron dos soluciones:
 
   -  **Matriz de medición (H)**:
       - Permite 'traducir' el estado interno del filtro a lo que la cámara realmente mide.
-      - En otras palabras, si bien el filtro rastrea 4 variables definidas en el vector de estado, la cámara solo entrega 2 mediciones (x,y). La cámara no da la velocidad directamente, se tiene que deducir.
-      - Función: Conecta las variables del sensor con el filtro.
+      - **Función:** Conecta las variables del sensor con el filtro.
 
     $$
     \begin{bmatrix}
