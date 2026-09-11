@@ -245,7 +245,7 @@ Para ello, se implementaron dos soluciones:
       0 & 1 & 0 & 0 \\
       0 & 0 & 1 & 0 \\
       0 & 0 & 0 & 1
-      \end{bmatrix} * 10^((-5))
+      \end{bmatrix} * 10^{-5}
     \end{aligned}
     $$
         
