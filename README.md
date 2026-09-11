@@ -187,10 +187,15 @@ Para ello, se implementaron dos soluciones:
 - Para ello, se definieron los siguientes vectores y matrices:
 
 **Vector de estado**: x=[x,y,v_x,v_y] --> Representan las variables utilizadas
-**Matriz de transición**: F=[[1,0,delta_t,0],
-                              [0,1,0,delta_t],
-                              [0,0,1,0],
-                              [0,0,0,1]]
+**Matriz de transición**:
+$$
+\begin{bmatrix}
+1 & 0 & delta_t & 0 \\
+0 & 1 & 0 & delta_t \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
 
 ----
 
