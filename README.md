@@ -107,7 +107,7 @@ A continuación, se detalla dicho proceso en la siguiente figura:
 - **Verde:** Distancia con invarianza a escala y suavizado (*smoothed*)
 
 **Interpretación:**
-- Se observa que la configuración sin invarianza a escala (azul) presenta un aumento progresivo de la distancia a medida que la mano se acerca a la cámara, afectando la estabilidad y consistencia de la detección del *left click* basada en distancia.
+- Se observa que la configuración sin invarianza a escala (azul) presenta un aumento progresivo de la distancia entre los dedos índice y pulgar a medida que la mano se acerca a la cámara, afectando la estabilidad y consistencia de la detección del *left click* basada en distancia.
 - Por otro lado, la invarianza a escala (rojo y verde) reduce este efecto durante la aproximación, aunque introduce ruido en ausencia de suavizado (*smoothing*) que se observa en la gráfica roja.
 
 **Técnica seleccionada:**
