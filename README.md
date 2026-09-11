@@ -128,6 +128,9 @@ Los gestos que permite el *mouse* virtual, actualmente, se describen a continuac
 
 ### **PROBLEMA ENCONTRADO:**
 Al controlar el movimiento del cursor mediante las coordenadas de la punta del dedo índice de la mano izquierda, se observó la presencia ruido que generó pequeñas oscilaciones y temblores en la trayectoria del cursor, afectando la calidad de la usabilidad.
+Para ello, se implementaron dos soluciones:
+- *Smoothing* con fórmula de suavizado [Exponential Moving Average Filtering (low-pass filter)]("--solucion-1:")
+- *Smoothing* utilizando el filtro de Kalman.
 
 
 #### **- SOLUCIÓN 1:**
@@ -155,9 +158,9 @@ Al controlar el movimiento del cursor mediante las coordenadas de la punta del d
   <sub>Figura: (izquierda) Coordenadas 'x' - Index Finger (derecha) Coordenadas 'y' - Index Finger </sub>
 </p>
 
-Como se observa en las figuras, se aprecia un 'suavizado' en los máximos y mínimos de las funciones que describen las trayectorias de movimiento de las coordenadas "x" e "y" del dedo índice de la mano izquierda, lo que refleja una reducción de las oscilaciones y temblores del cursor (se corroboró durante las pruebas de funcionamiento (*testing*) del mouse virtual).
+- Como se observa en las figuras, se aprecia un 'suavizado' en los máximos y mínimos de las funciones que describen las trayectorias de movimiento de las coordenadas "x" e "y" del dedo índice de la mano izquierda, lo que refleja una reducción de las oscilaciones y temblores del cursor (se corroboró durante las pruebas de funcionamiento (*testing*) del mouse virtual).
 
-**NOTA:** El vaivén de la gráfica se debe al movimiento del cursor sobre la pantalla. La reducción de las oscilaciones y temblores se describen por el suavizado en los máximos y mínimos de la función de trayectoria del movimiento del cursor en la gráfica.
+- **NOTA:** El vaivén de la gráfica se debe al movimiento del cursor sobre la pantalla. La reducción de las oscilaciones y temblores se describen por el suavizado en los máximos y mínimos de la función de trayectoria del movimiento del cursor en la gráfica.
 
 ----
 
