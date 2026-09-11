@@ -268,12 +268,13 @@ Para ello, se implementaron dos soluciones:
     \end{aligned}
   $$      
 
-#### <ins>7.2) Análisis de Q y R:</ins>
-- Al elegir Q < R (10^(-5) frente a 10^(-2)), el filtro asume que el sensor tiene ruido y asume que la aceleración de la mano varía poco. En ese sentido, el filtro otorga prioridad máxima a la estimación física cinemática, que a los valores capturados por la cámara.
+#### <ins>7.2) ANÁLISIS DE 'Q' Y 'R':</ins>
+- Al elegir Q < R (10^(-5) frente a 10^(-2)), el filtro asume que el sensor tiene ruido y asume que la aceleración de la mano varía poco. En ese sentido, el filtro otorga prioridad máxima a la estimación física cinemática, en vez de a los valores capturados por la cámara.
 
-#### <ins> 7.3) Efecto sobre el jitter:</ins>
+#### <ins> 7.3) EFECTO SOBRE EL JITTER:</ins>
 - Debido a la configuración anterior, se logra disminuir las oscilaciones producidas por el jitter en la trayectoria del cursor.
- 
+
+
 ----
 
 ## 8) INCIDENCIAS RESUELTAS
