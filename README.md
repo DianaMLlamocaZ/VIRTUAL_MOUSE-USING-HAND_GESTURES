@@ -143,7 +143,7 @@ Los gestos que permite el *mouse* virtual, actualmente, se describen a continuac
 ### <ins>**PROBLEMA ENCONTRADO:**</ins>
 Al controlar el movimiento del cursor mediante las coordenadas de la punta del dedo índice de la mano izquierda, se observó la presencia ruido que generó pequeñas oscilaciones y temblores en la trayectoria del cursor, afectando la calidad de la usabilidad.
 Para ello, se implementaron dos soluciones:
-- *Smoothing* con fórmula de suavizado Exponential Moving Average Filtering (low-pass filter): [¡Click aquí!](#71-solución-1)
+- *Smoothing* con fórmula de suavizado Exponential Moving Average Filtering (low-pass filter): [¡Click aquí!](#71-solución-1-exponential-moving-average-filtering)
 - *Smoothing* utilizando el filtro de Kalman: ¡Click aquí!
 
 
