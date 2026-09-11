@@ -271,15 +271,16 @@ Para ello, se implementaron dos soluciones:
 
 #### <ins>7.2) CONDICIONES INICIALES DEL FILTRO DE KALMAN:</ins>
 - Para evitar un desplazamiento del cursor al origen de coordenadas (0,0) en el primer frame, se estableció al vector *statePost* con la primera coordenada detectada por la cámara:
+
   $$
   \begin{aligned}
-  x_{0} =
-  \begin{bmatrix}
-  x_{inicial} \\
-  y_{inicial} \\
-  0 \\
-  0
-  \end{bmatrix}
+    x_{0} =
+    \begin{bmatrix}
+    x_{inicial} \\
+    y_{inicial} \\
+    0 \\
+    0
+    \end{bmatrix}
   \end{aligned}
   $$
 
