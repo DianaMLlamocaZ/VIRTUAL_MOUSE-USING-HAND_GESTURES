@@ -234,8 +234,8 @@ Para ello, se implementaron dos soluciones:
 
   -  **Matriz de ruido de proceso (Q)**:
       - Representa la incertidumbre en el modelo físico:
-        - Mientras más alto sea su valor, más se 'confía' en las mediciones del sensor (menos confianza en el modelo físico).
-        - Mientras más bajo sea su valor, menos se 'confía' en las mediciones del sensor (más confianza en el modelo físico).
+        - Mientras más alto sea su valor, menos se confía en el modelo físico (más confianza en el sensor).
+        - Mientras más bajo sea su valor, más se 'confía' en el modelo físico (menos confianza en el sensor).
       - Q = I * r_p; I: matriz identidad, r_p: escalar que representa el ruido del proceso.
       - **NOTA:** Se configuró 'r_p' en 10^(-5) 
 
@@ -253,8 +253,8 @@ Para ello, se implementaron dos soluciones:
 
   -  **Matriz de ruido de medición (R)**:
       - Representa la imprecisión del sensor:
-        - Mientras más bajo sea su valor, más se confía en el modelo físico (menos confianza en el sensor).
-        - Mientras más alto sea su valor, menos se confía en el modelo físico (más confianza en el sensor).
+        - Mientras más bajo sea su valor, más se confía en el sensor (menos confianza en el modelo físico).
+        - Mientras más alto sea su valor, menos se confía en el sensor (más confianza en el modelo físico).
       - R = I * r_m; I: matriz identidad, r_m: escalar que representa el ruido de medición.
       - **NOTA:** Se configuró 'r_m' en 10^(-2)
         
@@ -262,12 +262,17 @@ Para ello, se implementaron dos soluciones:
     \begin{aligned}
       R =
       \begin{bmatrix}
-      1 & 0 & 0 & 0 \\
-      0 & 1 & 0 & 0 
+      1 & 0 \\
+      0 & 1 
       \end{bmatrix} * 10^{-2}
     \end{aligned}
   $$      
 
+#### <ins>7.2) Análisis de Q y R:</ins>
+- Al elegir Q < R (10^(-5) frente a 10^(-2)), el filtro asume que el sensor tiene ruido y asume que la aceleración de la mano varía poco. En ese sentido, el filtro otorga prioridad máxima a la estimación física cinemática, que a los valores capturados por la cámara.
+
+#### <ins> 7.3) Efecto sobre el jitter:</ins>
+- Debido a la configuración anterior, se logra disminuir las oscilaciones producidas por el jitter en la trayectoria del cursor.
  
 ----
 
