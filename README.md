@@ -188,6 +188,7 @@ Para ello, se implementaron dos soluciones:
 
 **Vector de estado**: x=[x,y,v_x,v_y] --> Representan las variables utilizadas
 **Matriz de transición**:
+
 $$
 \begin{bmatrix}
 1 & 0 & delta_t & 0 \\
