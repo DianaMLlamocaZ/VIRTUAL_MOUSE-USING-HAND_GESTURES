@@ -214,12 +214,12 @@ $$
 
   - En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
 
-    $$
-    \begin{aligned}
-    x_{k} &= x_{k-1} + v_x \Delta t \\
-    y_{k} &= y_{k-1} + v_y \Delta t
-    \end{aligned}
-    $$
+$$
+\begin{aligned}
+x_{k} &= x_{k-1} + v_x \Delta t \\
+y_{k} &= y_{k-1} + v_y \Delta t
+\end{aligned}
+$$
  
 ----
 
