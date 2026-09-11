@@ -200,27 +200,27 @@ Para ello, se implementaron dos soluciones:
 
   - **Matriz de transición (F)**:
     - Calcula la predicción utilizando la fórmula de velocidad constante definida en la matriz.
-      - **NOTA:** 'delta_t' fue configurado con el valor 1, ya que el *update* se realiza en cada frame.
-      - Función: Aplica la física del movimiento.
+    - **NOTA:** 'delta_t' fue configurado con el valor 1, ya que el *update* se realiza en cada frame.
+    - Función: Aplica la física del movimiento.
 
-$$
-\begin{bmatrix}
-1 & 0 & \Delta t & 0 \\
-0 & 1 & 0 & \Delta t \\
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1
-\end{bmatrix}
-$$
+      $$
+      \begin{bmatrix}
+      1 & 0 & \Delta t & 0 \\
+      0 & 1 & 0 & \Delta t \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1
+      \end{bmatrix}
+      $$
   
  
  --> En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
-
-$$
-\begin{aligned}
-x_{k} &= x_{k-1} + v_x \Delta t \\
-y_{k} &= y_{k-1} + v_y \Delta t
-\end{aligned}
-$$
+ 
+      $$
+      \begin{aligned}
+      x_{k} &= x_{k-1} + v_x \Delta t \\
+      y_{k} &= y_{k-1} + v_y \Delta t
+      \end{aligned}
+      $$
 
 
   - **Matriz de medición (H)**:
@@ -228,12 +228,12 @@ $$
     - En otras palabras, si bien el filtro rastrea 4 variables definidas en el vector de estado, la cámara solo entrega 2 mediciones (x,y). La cámara no da la velocidad directamente, se tiene que deducir.
     - Función: Conecta las variables del sensor con el filtro.
 
-$$
-\begin{bmatrix}
-1 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0
-\end{bmatrix}
-$$
+      $$
+      \begin{bmatrix}
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0
+      \end{bmatrix}
+      $$
       
 
  
