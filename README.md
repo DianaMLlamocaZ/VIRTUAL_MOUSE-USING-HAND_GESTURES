@@ -179,6 +179,11 @@ Para ello, se implementaron dos soluciones:
 
 --> **NOTA:** El vaivén de la gráfica se debe al movimiento del cursor sobre la pantalla. La reducción de las oscilaciones y temblores se describen por el suavizado en los máximos y mínimos de la función de trayectoria del movimiento del cursor en la gráfica.
 
+====
+
+### <ins>**7.2) SOLUCIÓN 2: Kalman Filter**</ins>
+
+
 ----
 
 ## 8) MEJORAS E INCIDENCIAS RESUELTAS
