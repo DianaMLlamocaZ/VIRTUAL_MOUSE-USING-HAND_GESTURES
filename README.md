@@ -184,7 +184,7 @@ Para ello, se implementaron dos soluciones:
 ### <ins>**7.2) SOLUCIÓN 2: Kalman Filter**</ins>
 
 - Otra técnica utilizada para suavizar la trayectoria del cursor fue el filtro de Kalman mediante OpenCV.
-- Para ello, se definieron los siguientes vectores y matrices:
+  Para ello, se definieron los siguientes vectores y matrices:
 
   -  **Vector de estado (x)**:
 
@@ -197,7 +197,7 @@ v_y
 \end{bmatrix}
 $$
 
-  representan las variables utilizadas
+    representan las variables utilizadas
 
   - **Matriz de transición (F)**:
 
@@ -210,7 +210,7 @@ $$
 \end{bmatrix}
 $$
   
-  donde 'delta_t' fue configurado con el valor 1.
+    donde 'delta_t' fue configurado con el valor 1.
 
   --> En conjunto, ambos representan un modelo de velocidad constante con el vector de estado 'x', y la matriz 'F' que aplica la fórmula física:
 
