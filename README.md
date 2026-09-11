@@ -89,13 +89,14 @@ A continuación, se detalla dicho proceso en la siguiente figura:
   Dado que el *left click* funciona en base a un *threshold* de distancia entre ambos dedos, la no invarianza a escala puede ocasionar falsos positivos (falsos *clicks*) solo por la lejanía o cercanía a la cámara. 
 
 **Solución:**
-- Para aplicar invarianza a escala, se define un punto central de referencia (wrist). A partir de este, se calcula la distancia entre el wrist y el landmark 9. Luego, todos los demás keypoints se normalizan dividiendo sus distancias respecto a ese valor.
+- Para aplicar la invarianza a escala, se define un punto central de referencia (wrist). A partir de este, se calcula la distancia entre el wrist y el landmark 9. Luego, todos los demás keypoints se normalizan dividiendo sus distancias respecto a ese valor.
 
 **Gráficas:**
 - La siguiente gráfica compara el comportamiento de la distancia normalizada bajo diferentes configuraciones del sistema, evaluando el efecto de la invarianza a escala y el suavizado ([*smoothing*](#7-reducción-de-temblor-en-el-movimiento-del-cursor), se explica más adelante también):
 
 <div align="center">
   <img src="./images/InvarianzaEscala.JPG" width=450>
+  - Distancia entre los dedos índice y pulgar a medida que ambos se acercan a la cámara
 </div>
 
 - **Azul:** Distancia sin invarianza a escala con suavizado  
@@ -103,7 +104,7 @@ A continuación, se detalla dicho proceso en la siguiente figura:
 - **Verde:** Distancia con invarianza a escala y suavizado (*smoothed*)
 
 **Interpretación:**
-- Se observa que la configuración sin invarianza a escala (azul) presenta un aumento progresivo de la distancia debido a medida que la mano se acerca a la cámara, afectando la estabilidad del seguimiento. Por otro lado, la invarianza a escala (rojo y verde) reduce este efecto, aunque introduce ruido en ausencia de suavizado (*smoothing*).
+- Se observa que la configuración sin invarianza a escala (azul) presenta un aumento progresivo de la distancia a medida que la mano se acerca a la cámara, afectando la estabilidad y consistencia de la detección del *left click* basada en distancia. Por otro lado, la invarianza a escala (rojo y verde) reduce este efecto, aunque introduce ruido en ausencia de suavizado (*smoothing*).
 
 **Técnica seleccionada:**
 - La combinación de **invarianza a escala + suavizado (verde)** fue la configuración seleccionada, ya que proporciona la mejor estabilidad general, reduciendo tanto la sensibilidad al tamaño como el temblor (*jitter*) en la trayectoria del movimiento del cursor, manteniendo un comportamiento consistente a lo largo del tiempo.
