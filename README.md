@@ -197,9 +197,9 @@ v_x \\
 v_y
 \end{bmatrix}
 $$
-  - **Matriz de transición (F)**:
-      - Calcula la predicción utilizando la fórmula de velocidad constante definida en la matriz.
-      - **NOTA:** 'delta_t' fue configurado con el valor 1.
+    - **Matriz de transición (F)**:
+        - Calcula la predicción utilizando la fórmula de velocidad constante definida en la matriz.
+        - **NOTA:** 'delta_t' fue configurado con el valor 1.
 
 $$
 \begin{bmatrix}
